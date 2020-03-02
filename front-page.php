@@ -28,7 +28,7 @@ $query1 = new WP_Query( $args );
 /* The 2nd Query (without global var) */
 $args2 = array(
     "category_name" => "conference",
-    "posts-per-page" => 10
+    "posts-per-page" => 3
 );
 
 
@@ -61,16 +61,17 @@ get_header();
         
         
  ///////////////////////////////////////////////Nouvelle
- echo '<h2>' . category_description( get_category_by_slug( 'nouvelle' )) . '</h2>';
-
-
-
-// The Loop
-while ( $query1->have_posts() ) {
-    $query1->the_post();
-    echo '<h2>' . get_the_title() . '</h2>';
+ echo '<h2>' . category_description( get_category_by_slug( 'conference' )) . '</h2>';
+ while ( $query2->have_posts() ) {
+    $query2->the_post();
+    the_post_thumbnail("thumbnail");
+    echo '<li>' . get_the_title( $query2->post->ID ) . '</li>';
     echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
+    
 }
+
+
+
  
 /* Restore original Post Data 
  * NB: Because we are using new WP_Query we aren't stomping on the 
@@ -82,14 +83,13 @@ wp_reset_postdata();
  
  
 
- 
+echo '<h2>' . category_description( get_category_by_slug( 'nouvelle' )) . '</h2>';
 // The 2nd Loop
-while ( $query2->have_posts() ) {
-    $query2->the_post();
-    the_post_thumbnail("thumbnail");
-    echo '<li>' . get_the_title( $query2->post->ID ) . '</li>';
+// The Loop
+while ( $query1->have_posts() ) {
+    $query1->the_post();
+    echo '<h2>' . get_the_title() . '</h2>';
     echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
-    
 }
  
 // Restore original Post Data
