@@ -1,0 +1,39 @@
+body{
+    overflow:auto;
+}
+.conference {
+    background-color:white !important;
+}
+
+.conference h4{
+    position:absolute; 
+    left:12%;
+}
+.conference p{
+    display:inline-block;
+    margin-left:2%;
+    width:35%;
+    height:180px;
+    padding-top:3%;
+}
+
+.conference img{
+    float:left;
+    clear: both;
+}
+
+.nouvelle {
+    display: flex;
+    justify-content: center;
+}
+.oFlex{
+    display:flex;
+    width:100%;
+    height:auto;
+    justify-content: space-around;
+}
+.oPost{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+}

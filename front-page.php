@@ -34,9 +34,6 @@ $args2 = array(
 
 $query2 = new WP_Query( $args2 );
 
-
-
-
 get_header();
 ?>
 	<div id="primary" class="content-area">
@@ -64,10 +61,11 @@ get_header();
  echo '<h2>' . category_description( get_category_by_slug( 'conference' )) . '</h2>';
  while ( $query2->have_posts() ) {
     $query2->the_post();
-    the_post_thumbnail("thumbnail");
-    echo '<li>' . get_the_title( $query2->post->ID ) . '</li>';
+    echo '<div class="conference">';
+    echo '<h4>' . get_the_title( $query2->post->ID ) . ' ' . get_the_date('Y-m-d') . '</h4>'; 
     echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
-    
+    the_post_thumbnail("thumbnail");
+    echo '</div>';
 }
 
 
@@ -88,8 +86,12 @@ echo '<h2>' . category_description( get_category_by_slug( 'nouvelle' )) . '</h2>
 // The Loop
 while ( $query1->have_posts() ) {
     $query1->the_post();
-    echo '<h2>' . get_the_title() . '</h2>';
-    echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
+    echo '<div class="nouvelle">';
+    echo '<div class="nouvelleDiv">';
+    echo '<h4>' . get_the_title() . '</h4>';
+    the_post_thumbnail("thumbnail");
+    echo '</div>';
+    echo '</div>';
 }
  
 // Restore original Post Data
