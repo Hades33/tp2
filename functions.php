@@ -12,4 +12,12 @@ function extraire_cours( $query ) {
        $query->set( 'orderby', 'date' );
        $query->set( 'order', 'ASC' );
     }
+
+    if ($query->is_category('atelier'))
+    {
+       $query->set( 'posts_per_page', 10 );
+       $query->set( 'orderby', 'date' );
+       $query->set( 'order', 'ASC' );
+    }
+
  }
