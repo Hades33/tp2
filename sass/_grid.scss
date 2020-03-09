@@ -3,3 +3,15 @@
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(31,1fr);
 }
+
+.gridAtelier{
+    display:grid;
+    grid-template-columns: repeat(4,2fr);
+    grid-template-rows: repeat(4,2fr);
+    border: 2px solid black;
+}
+
+.gridAtelier .gridInterieur{
+
+    border: 1px solid black;
+}

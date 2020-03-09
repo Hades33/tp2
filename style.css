@@ -107,6 +107,20 @@
       grid-template-rows: repeat(31, 1fr);
 }
 
+.gridAtelier {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (2fr)[4];
+      grid-template-columns: repeat(4, 2fr);
+  -ms-grid-rows: (2fr)[4];
+      grid-template-rows: repeat(4, 2fr);
+  border: 2px solid black;
+}
+
+.gridAtelier .gridInterieur {
+  border: 1px solid black;
+}
+
 img {
   background-color: red;
 }
