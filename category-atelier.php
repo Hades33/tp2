@@ -5,6 +5,8 @@ get_header();
 <div id="primary" class="content-area">
 <main id="main" class="site-main">
     <?php
+
+echo '<h2>' . category_description( get_category_by_slug( 'atelier' )) . '</h2>';
     
 echo '<ol>';
 while ( have_posts() ) :
