@@ -153,6 +153,7 @@ body {
 
 .conference {
   background-color: white !important;
+  border: 4px solid black;
 }
 
 .conference h4 {
