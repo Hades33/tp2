@@ -30,8 +30,8 @@ function extraire_cours( $query ) {
 
     if ($query->is_category('nouvelle'))
     {
-       $query->set( 'posts_per_page', 10 );
-       $query->set( 'orderby', 'post_name' );
+       $query->set( 'posts_per_page', 3 );
+       $query->set( 'orderby', 'date' );
        $query->set( 'order', 'ASC' );
     }
 

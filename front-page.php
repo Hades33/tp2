@@ -54,7 +54,23 @@ get_header();
 				comments_template();
 			endif;
 
-		endwhile; // End of the loop.
+        endwhile; // End of the loop.
+        
+
+        echo '<h2>' . category_description( get_category_by_slug( 'nouvelle' )) . '</h2>';
+        // The 2nd Loop
+        // The Loop
+    while ( $query1->have_posts() ) {
+        $query1->the_post();
+        echo '<div class="nouvelle">';
+        echo '<h4>' . get_the_title() . '</h4>';
+        echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
+        the_post_thumbnail("thumbnail");
+        echo '</div>';
+    }
+ 
+// Restore original Post Data
+wp_reset_postdata();
         
         
  ///////////////////////////////////////////////Nouvelle
@@ -81,21 +97,7 @@ wp_reset_postdata();
  
  
 
-echo '<h2>' . category_description( get_category_by_slug( 'nouvelle' )) . '</h2>';
-// The 2nd Loop
-// The Loop
-while ( $query1->have_posts() ) {
-    $query1->the_post();
-    echo '<div class="nouvelle">';
-    echo '<div class="nouvelleDiv">';
-    echo '<h4>' . get_the_title() . '</h4>';
-    the_post_thumbnail("thumbnail");
-    echo '</div>';
-    echo '</div>';
-}
- 
-// Restore original Post Data
-wp_reset_postdata();
+
  
 ?>
 
