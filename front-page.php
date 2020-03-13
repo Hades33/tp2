@@ -14,8 +14,9 @@
 
 // The Query
 $args = array(
-    "category_name" =>"nouvelle",
     "posts_per_page" => 3,
+    "category_name" =>"nouvelle"
+    
     //"orderby" => "date",
     //"order" => "ASC"
 );
@@ -27,8 +28,8 @@ $query1 = new WP_Query( $args );
 
 /* The 2nd Query (without global var) */
 $args2 = array(
-    "category_name" => "conference",
-    "posts-per-page" => 3
+    "posts-per-page" => 3,
+    "category_name" => "conference"
 );
 
 
@@ -46,13 +47,12 @@ get_header();
 		while ( have_posts() ) :
             the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+           // get_template_part( 'template-parts/content', 'page' );
+            the_post_thumbnail('full');
            // echo get_the_title();
 
 			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+	
 
         endwhile; // End of the loop.
         
@@ -78,7 +78,7 @@ wp_reset_postdata();
  while ( $query2->have_posts() ) {
     $query2->the_post();
     echo '<div class="conference">';
-    echo '<h4>' . get_the_title( $query2->post->ID ) . ' ' . get_the_date('Y-m-d') . '</h4>'; 
+    echo '<h4>' . get_the_title() . ' ' . get_the_date('Y-m-d') . '</h4>'; 
     echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
     the_post_thumbnail("thumbnail");
     echo '</div>';
