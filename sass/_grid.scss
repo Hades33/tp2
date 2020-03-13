@@ -2,6 +2,12 @@
     display:grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(31,1fr);
+    border: 2px solid black;
+
+    div{
+        border: 1px solid black;
+    }
+
 }
 
 .gridAtelier{

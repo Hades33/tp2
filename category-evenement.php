@@ -14,9 +14,14 @@ while ( have_posts() ) :
     $mois = ($mois % 3) + 1;
   
     $jour = (int)get_the_date('j'); 
-    $gridArea = $jour . '/' . $mois; 
+
+
+    $gridArea = $jour . '/' . $mois;
+
     echo $gridArea;
-    echo '<h2>' . get_the_title() .' ' . $gridArea.' ' . get_the_date('j-m-Y') .'</h2>';
+    echo '<div>';
+    echo '<a href="'. get_permalink().'"><p>' . get_the_title() .' ' . $gridArea.' ' . get_the_date('j-m-Y') .'</p></a>';
+    echo '</div>';
     //echo '<h4 style="grid-area:'. $gridArea .'">' . get_the_title() .  get_the_ID() . get_the_date('Y-m-d') . '</h4>'; 
 
 

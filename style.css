@@ -89,6 +89,11 @@
       grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: (1fr)[31];
       grid-template-rows: repeat(31, 1fr);
+  border: 2px solid black;
+}
+
+.oGrid div {
+  border: 1px solid black;
 }
 
 .gridAtelier {
@@ -195,6 +200,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.attachment-full {
+  width: 100%;
+}
+
+.site-header {
+  background-color: #797676;
 }
 
 .image-accueil img {
